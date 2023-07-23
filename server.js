@@ -7,13 +7,17 @@ import authRoute from "./routes/authRoute.js";
 import CategoryRoutes from "./routes/CategoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
-import path from "path";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 // dotenv configure
 dotenv.config();
 //database config
 connectDB();
 
+// esmoudle fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // rest object
 const app = express();
 
